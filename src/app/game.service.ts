@@ -20,6 +20,10 @@ export class GameService {
     this.isGame = false;
   }
 
+  addScore(){
+    this.score += 10;
+  }
+
   runTimer(){
     this.timer = PLAY_TIME;
     const interval = setInterval(() => {
