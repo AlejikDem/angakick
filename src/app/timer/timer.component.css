@@ -1,0 +1,13 @@
+.timer {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.counter {
+  font-size: 30px;
+}
