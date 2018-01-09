@@ -2,7 +2,7 @@
   <div *ngIf="!gameService.isGame" class="cover">
     <button class="button" type="button" (click)="gameService.startGame()">One more time!</button>
   </div>
-  <div class="cells">
+  <div class="cells" [ngClass]="{'stoppedGame': !gameService.isGame}">
     <app-cell *ngFor="let cell of gameService.cells; let i = index" [cell]="cell" [index]="i"></app-cell>
   </div>
 </div>

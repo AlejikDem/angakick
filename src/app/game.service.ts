@@ -20,6 +20,7 @@ export class GameService {
 
   startGame(){
     this.isGame = true;
+    this.score = 0;
     this.runTimer();
     this.runTargets();
   }

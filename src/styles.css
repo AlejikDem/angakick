@@ -9,3 +9,7 @@ body {
 body * {
   box-sizing: border-box;
 }
+
+.cells.stoppedGame .target {
+  animation-play-state: paused;
+}
