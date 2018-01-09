@@ -1,2 +1,6 @@
 <div class="hole"></div>
-<div class="target" [ngClass]="{ 'showed': cell.showed, 'clicked': cell.clicked }"></div>
+<div
+  class="target"
+  [ngClass]="{ 'showed': cell.showed, 'clicked': cell.clicked }"
+  (click)="gameService.hitTarget(index)"
+></div>

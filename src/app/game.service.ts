@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cell } from './types/cell';
-import { PLAY_TIME, CELLS, TARGET_ANIMATION_TIME, MOVE_TIME, HIT_SCORE } from './constants';
+import { PLAY_TIME, DEFAULT_CELL, CELLS, TARGET_ANIMATION_TIME, MOVE_TIME, HIT_SCORE } from './constants';
 
 import { getRandomNumInRange } from './utils';
 
@@ -41,12 +41,13 @@ export class GameService {
       item.showed = true;
 
       const timeout = setTimeout(() => {
+        item.clicked = false;
         item.showed = false;
       }, TARGET_ANIMATION_TIME);
     }
   }
 
-  runTargets(){
+  runTargets(): void{
     const interval = setInterval(() => {
       this.showTarget();
 
@@ -54,17 +55,15 @@ export class GameService {
     }, MOVE_TIME);
   }
 
-  onClickTarget(clickedIndex: number){
-    this.cells = this.cells.map((cell, ind) => {
-      if (ind === clickedIndex) {
-        cell.clicked = !cell.clicked;
-        return cell;
-      }
-      return cell;
-    })
+  hitTarget(clickedIndex: number): void{
+    const item = this.cells[clickedIndex];
+    if (!item.clicked) {
+      item.clicked = true;
+      this.addScore();
+    }
   }
 
-  runTimer(){
+  runTimer(): void{
     this.timer = PLAY_TIME;
     const interval = setInterval(() => {
       --this.timer;

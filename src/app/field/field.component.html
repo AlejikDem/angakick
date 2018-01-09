@@ -3,6 +3,6 @@
     <button class="button" type="button" (click)="gameService.startGame()">One more time!</button>
   </div>
   <div class="cells">
-    <app-cell *ngFor="let cell of gameService.cells" [cell]="cell"></app-cell>
+    <app-cell *ngFor="let cell of gameService.cells; let i = index" [cell]="cell" [index]="i"></app-cell>
   </div>
 </div>
