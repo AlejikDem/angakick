@@ -1,5 +1,5 @@
 @keyframes onShowed {
-  0% { bottom: 0; }
+  0% { bottom: 5px; }
   50% { bottom: 29px; }
   100% { bottom: 0; }
 }
@@ -20,13 +20,13 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 29px;
+  height: 34px;
   background-color: #56cc5b;
   z-index: 2;
 }
 
 .hole {
-  height: 40px;
+  height: 30px;
   width: 70px;
   background: #000;
   border-radius: 50%;
@@ -34,7 +34,7 @@
 
 .target {
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   left: 50%;
   margin-left: -10px;
   width: 20px;
@@ -43,9 +43,9 @@
   z-index: 1;
 }
 
-.target.show {
+.target.showed {
   animation-name: onShowed;
-  animation-duration: 10s;
+  animation-duration: 1s;
 }
 
 .target.clicked {
