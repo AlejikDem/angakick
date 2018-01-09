@@ -1,0 +1,8 @@
+<div class="field">
+  <div *ngIf="!gameService.isGame" class="cover">
+    <button class="button" type="button">One more time!</button>
+  </div>
+  <div class="cells">
+    <app-cell *ngFor="let cell of cells"></app-cell>
+  </div>
+</div>

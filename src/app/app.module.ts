@@ -9,6 +9,8 @@ import { GameComponent } from './game/game.component';
 import { GreetingComponent } from './greeting/greeting.component';
 import { TimerComponent } from './timer/timer.component';
 import { ScoreComponent } from './score/score.component';
+import { FieldComponent } from './field/field.component';
+import { CellComponent } from './cell/cell.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ScoreComponent } from './score/score.component';
     GameComponent,
     GreetingComponent,
     TimerComponent,
-    ScoreComponent
+    ScoreComponent,
+    FieldComponent,
+    CellComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+}
+
+:host::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 29px;
+  background-color: #56cc5b;
+  z-index: 2;
+}
+
+.hole {
+  height: 40px;
+  width: 70px;
+  background: #000;
+  border-radius: 50%;
+}
+
+.target {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -10px;
+  width: 20px;
+  height: 29px;
+  background: #fff;
+  z-index: 1;
+  transition: bottom 1s ease-in-out;
+}
