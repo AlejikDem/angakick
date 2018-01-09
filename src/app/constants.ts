@@ -1,8 +1,9 @@
 import { Cell } from './types/cell';
 
 export const PLAY_TIME: number = 10;
-export const TARGET_ANIMATION_TIME: number = 1000;
-export const MOVE_TIME: number = 500;
+//After changing TARGET_ANIMATION_TIME don't forget to change cell.component.css
+export const TARGET_ANIMATION_TIME: number = 1500;
+export const MOVE_TIME: number = TARGET_ANIMATION_TIME / 2;
 export const HIT_SCORE: number = 10;
 
 export const DEFAULT_CELL: Cell = {
