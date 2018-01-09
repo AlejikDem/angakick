@@ -1,2 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<router-outlet></router-outlet>
+<div class="wrapper" [ngClass]="{'isGame': gameService.isGame}">
+  <img
+    class="cursor-img"
+    src="../assets/images/hammer2.png"
+    id="img-cursor"
+    alt="cursor-hammer"
+  />
+  <router-outlet></router-outlet>
+</div>
