@@ -1,3 +1,9 @@
+@keyframes up-and-down {
+  0% { bottom: 0; }
+  50% { bottom: 29px; }
+  100% { bottom: 0; }
+}
+
 :host {
   display: flex;
   justify-content: center;
@@ -35,5 +41,9 @@
   height: 29px;
   background: #fff;
   z-index: 1;
-  transition: bottom 1s ease-in-out;
+}
+
+.target.show {
+  animation-name: up-and-down;
+  animation-duration: 2s;
 }

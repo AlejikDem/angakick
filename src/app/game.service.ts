@@ -13,7 +13,6 @@ export class GameService {
   startGame(){
     this.isGame = true;
     this.runTimer();
-
   }
 
   stopGame(){
