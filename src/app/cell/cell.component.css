@@ -43,6 +43,7 @@
   z-index: 1;
 }
 
+/* Animation duration need to be the same as TARGET_ANIMATION_TIME in constants */
 .target.showed {
   animation-name: onShowed;
   animation-duration: 1s;

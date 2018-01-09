@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cell } from './types/cell';
+import { PLAY_TIME, CELLS, TARGET_ANIMATION_TIME, MOVE_TIME, HIT_SCORE } from './constants';
 
 import { getRandomNumInRange } from './utils';
 
@@ -7,22 +8,20 @@ const defaultCell: Cell = {
   showed: false,
   clicked: false,
 };
-const PLAY_TIME = 10;
-const cells = Array.apply(null, { length: 9 }).map((item, index) => Object.assign({}, defaultCell));
 
 @Injectable()
 export class GameService {
   isGame: boolean = false;
   score: number = 0;
   timer: number = PLAY_TIME;
-  cells: Cell[] = cells;
+  cells: Cell[] = CELLS;
 
   constructor() { }
 
   startGame(){
     this.isGame = true;
     this.runTimer();
-    this.showTargets();
+    this.runTargets();
   }
 
   stopGame(){
@@ -30,20 +29,29 @@ export class GameService {
   }
 
   addScore(){
-    this.score += 10;
+    this.score += HIT_SCORE;
   }
 
-  showTargets(){
-    const interval = setInterval(() => {
-      const num =  getRandomNumInRange(8);
-      const item = this.cells[num];
+  showTarget(){
+    const item = this.cells[getRandomNumInRange(8)];
+
+    if(item.showed) {
+      this.showTarget();
+    } else {
       item.showed = true;
+
       const timeout = setTimeout(() => {
         item.showed = false;
-      }, 1000);
+      }, TARGET_ANIMATION_TIME);
+    }
+  }
+
+  runTargets(){
+    const interval = setInterval(() => {
+      this.showTarget();
 
       if (!this.isGame) clearInterval(interval);
-    }, 500);
+    }, MOVE_TIME);
   }
 
   onClickTarget(clickedIndex: number){
