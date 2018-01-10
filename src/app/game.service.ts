@@ -22,13 +22,18 @@ export class GameService {
 
   startGame(){
     this.isGame = true;
-    this.score = 0;
+    this.initCounters();
     this.runTimer();
     this.runTargets();
   }
 
   stopGame(){
     this.isGame = false;
+  }
+
+  initCounters() {
+    this.score = 0;
+    this.combo = 0;
   }
 
   addScore(){
