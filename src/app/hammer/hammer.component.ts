@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { kick } from '../utils';
 
 @Component({
   selector: 'app-hammer',
@@ -12,6 +13,7 @@ export class HammerComponent implements OnInit, OnDestroy {
     this.image.style.top = `${e.pageY - 80}px`;
   };
   onDown: (e: any) => void = e => {
+    kick();
     this.image.style.transform = 'rotate(-90deg)';
   }
   onUp: (e: any) => void = e => {
