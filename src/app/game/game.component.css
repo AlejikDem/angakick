@@ -1,4 +1,15 @@
 :host {
+  width: 100%;
+}
+
+.title {
+  color: #bada55;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.wrapper {
   display: flex;
   justify-content: space-around;
   width: 100%;
