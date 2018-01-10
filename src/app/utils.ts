@@ -16,15 +16,15 @@ export const kick = () => {
   osc.type = "triangle";
   osc2.type = "sine";
 
-  gainOsc.gain.setValueAtTime(1, audioContext.currentTime);
+  gainOsc.gain.setValueAtTime(2, audioContext.currentTime);
   gainOsc.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.5);
 
 
-  gainOsc2.gain.setValueAtTime(1, audioContext.currentTime);
+  gainOsc2.gain.setValueAtTime(2, audioContext.currentTime);
   gainOsc2.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.5);
 
 
-  osc.frequency.setValueAtTime(120, audioContext.currentTime);
+  osc.frequency.setValueAtTime(100, audioContext.currentTime);
   osc.frequency.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.5);
 
   osc2.frequency.setValueAtTime(50, audioContext.currentTime);
