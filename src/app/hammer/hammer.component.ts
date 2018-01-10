@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { kick } from '../utils';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-hammer',
@@ -13,6 +14,7 @@ export class HammerComponent implements OnInit, OnDestroy {
     this.image.style.top = `${e.pageY - 80}px`;
   };
   onDown: (e: any) => void = e => {
+    this.gameService.countCombo(e.target.classList);
     kick();
     this.image.style.transform = 'rotate(-90deg)';
   }
@@ -20,7 +22,7 @@ export class HammerComponent implements OnInit, OnDestroy {
     this.image.style.transform = 'rotate(-55deg)';
   }
 
-  constructor() { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
     this.image = document.getElementById('img-cursor');

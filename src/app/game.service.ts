@@ -15,6 +15,8 @@ export class GameService {
   score: number = 0;
   timer: number = PLAY_TIME;
   cells: Cell[] = CELLS;
+  combo: number = 0;
+  maxCombo: number = 0;
 
   constructor() { }
 
@@ -54,6 +56,15 @@ export class GameService {
 
       if (!this.isGame) clearInterval(interval);
     }, MOVE_TIME);
+  }
+
+  countCombo(classList: string[]): void {
+    if (classList[classList.length - 1] === 'showed') {
+      ++this.combo;
+      if (this.combo > this.maxCombo) ++this.maxCombo;
+    } else {
+      this.combo = 0;
+    }
   }
 
   hitTarget(clickedIndex: number): void{

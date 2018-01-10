@@ -1,5 +1,10 @@
 .score {
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.score:last-child {
+  margin-bottom: 0;
 }
 
 .title {
