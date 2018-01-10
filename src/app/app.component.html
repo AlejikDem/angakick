@@ -1,10 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="wrapper" [ngClass]="{'isGame': gameService.isGame}">
-  <img
-    class="cursor-img"
-    src="../assets/images/hammer2.png"
-    id="img-cursor"
-    alt="cursor-hammer"
-  />
+  <app-hammer *ngIf="gameService.isGame"></app-hammer>
   <router-outlet></router-outlet>
 </div>

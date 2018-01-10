@@ -11,6 +11,7 @@ import { TimerComponent } from './timer/timer.component';
 import { ScoreComponent } from './score/score.component';
 import { FieldComponent } from './field/field.component';
 import { CellComponent } from './cell/cell.component';
+import { HammerComponent } from './hammer/hammer.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CellComponent } from './cell/cell.component';
     TimerComponent,
     ScoreComponent,
     FieldComponent,
-    CellComponent
+    CellComponent,
+    HammerComponent
   ],
   imports: [
     BrowserModule,

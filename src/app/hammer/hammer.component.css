@@ -1,0 +1,6 @@
+.cursor-img {
+  position: absolute;
+  z-index: 5;
+  transform: rotate(-55deg);
+  transition: transform 0.05s linear;
+}
